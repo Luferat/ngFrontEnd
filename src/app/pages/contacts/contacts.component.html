@@ -24,7 +24,7 @@
 
     <p>
         <label for="message">Mensagem:</label>
-        <textarea name="message" id="message" formControlName="message"></textarea>
+        <textarea (keyup)="autogrow($event)" name="message" id="message" formControlName="message"></textarea>
         <span class="error-message" *ngIf="formErrors.message">{{ formErrors.message }}</span>
     </p>
 

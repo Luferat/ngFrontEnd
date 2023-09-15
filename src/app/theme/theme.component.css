@@ -2,8 +2,60 @@
     font-weight: bold;
 }
 
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+nav a {
+    text-decoration: none;
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 nav img {
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 50%;
+}
+
+#wrap {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+    padding: 0 1rem;
+}
+
+header {
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0;
+    
+}
+
+header h1 a {
+    text-decoration: none;
+    color: yellowgreen;
+    -webkit-text-stroke: 1px black;
+}
+
+footer {
+    font-size: small;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem;
+    border-top: 1px solid grey;
 }

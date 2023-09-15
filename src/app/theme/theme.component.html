@@ -1,28 +1,33 @@
-<header>
-    <h1>{{siteName}}</h1>
-</header>
+<div id="wrap">
+    <header>
+        <h1><a routerLink="home" title="Página inicial">{{siteName}}</a></h1>
+    </header>
 
-<nav>
-    <a routerLink="home" title="Página inicial" routerLinkActive="active">Início</a> &nbsp;
-    <a routerLink="new" title="Novo treco" routerLinkActive="active">Novo</a> &nbsp;
-    <a routerLink="contacts" title="Faça contato" routerLinkActive="active">Contatos</a> &nbsp;
-    <span *ngIf="user; then userProfile else userLogin"></span>
-</nav>
+    <nav>
+        <a routerLink="home" title="Página inicial" routerLinkActive="active"><i class="fa-solid fa-house fa-fw"></i><span>Início</span></a>
+        <a routerLink="new" title="Novo treco" routerLinkActive="active"><i class="fa-solid fa-plus fa-fw"></i><span>Novo</span></a>
+        <a routerLink="contacts" title="Faça contato" routerLinkActive="active"><i class="fa-solid fa-comments fa-fw"></i><span>Contatos</span></a>
+        <span *ngIf="user; then userProfile else userLogin"></span>
+    </nav>
 
-<router-outlet></router-outlet>
+    <main>
+        <router-outlet></router-outlet>
+    </main>
 
-<footer>
-    &copy; 2023 André Luferat
-</footer>
+    <footer>
+        &copy; 2023 André Luferat
+    </footer>
 
-<ng-template #userLogin>
-    <a routerLink="/login" id="user" title="Perfil do usuário" routerLinkActive="active">
-        <span>Login</span>
-    </a>
-</ng-template>
-<ng-template #userProfile>
-    <a routerLink="/profile" id="user" title="Perfil do usuário" routerLinkActive="active">
-        <img src="{{user.photoURL}}" alt="Perfil de {{user.displayName}}" referrerpolicy="no-referrer">
-        <span>Perfil</span>
-    </a>
-</ng-template>
+    <ng-template #userLogin>
+        <a routerLink="/login" id="user" title="Perfil do usuário" routerLinkActive="active">
+            <i class="fa-solid fa-user fa-fw"></i>
+            <span>Login</span>
+        </a>
+    </ng-template>
+    <ng-template #userProfile>
+        <a routerLink="/profile" id="user" title="Perfil do usuário" routerLinkActive="active">
+            <img src="{{user.photoURL}}" alt="Perfil de {{user.displayName}}" referrerpolicy="no-referrer">
+            <span>Perfil</span>
+        </a>
+    </ng-template>
+</div>

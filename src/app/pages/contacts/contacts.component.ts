@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-contacts',
   templateUrl: './contacts.component.html',
-  styleUrls: ['./contacts.component.css'] 
+  styleUrls: ['./contacts.component.css']
 })
 export class ContactsComponent {
 
@@ -18,17 +18,20 @@ export class ContactsComponent {
 
   validationMessages: any = {
     name: {
-      required: 'O nome é obrigatório.'
+      required: 'O nome é obrigatório.',
+      minlength: 'O nome está muito curto.'
     },
     email: {
       required: 'O email é obrigatório.',
       email: 'Digite um email válido.'
     },
     subject: {
-      required: 'O assunto é obrigatório.'
+      required: 'O assunto é obrigatório.',
+      minlength: 'O assunto está muito curto.'
     },
     message: {
-      required: 'A mensagem é obrigatória.'
+      required: 'A mensagem é obrigatória.',
+      minlength: 'A mensagem está muito curta.'
     }
   }
 
@@ -56,10 +59,10 @@ export class ContactsComponent {
 
   createForm() {
     this.contactForm = this.formBuilder.group({
-      name: ['', Validators.required],
+      name: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
-      subject: ['', Validators.required],
-      message: ['', Validators.required]
+      subject: ['', [Validators.required, Validators.minLength(3)]],
+      message: ['', [Validators.required, Validators.minLength(3)]]
     });
   }
 
@@ -116,6 +119,11 @@ export class ContactsComponent {
   reset() {
     this.success = false;
     return false;
+  }
+
+  autogrow(e: any) {
+    e.target.style.height = "0px";
+    e.target.style.height = (e.target.scrollHeight + 4) + "px";
   }
 
 } 

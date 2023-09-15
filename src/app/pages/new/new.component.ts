@@ -16,9 +16,9 @@ export class NewComponent {
   success: boolean = false;
 
   validationMessages: any = {
-    name: { required: 'O nome é obrigatório.' },
-    description: { required: 'A descrição é obrigatória.' },
-    location: { required: 'A localização é obrigatória.' }
+    name: { required: 'Obrigatório.', minlength: 'Muito curto.' },
+    description: { required: 'Obrigatória.', minlength: 'Muito curta.' },
+    location: { required: 'Obrigatória.', minlength: 'Muito curta.' }
   }
 
   formErrors: any = {
@@ -43,9 +43,9 @@ export class NewComponent {
 
   createForm() {
     this.newThingForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      description: ['', Validators.required],
-      location: ['', Validators.required]
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      description: ['', [Validators.required, Validators.minLength(5)]],
+      location: ['', [Validators.required, Validators.minLength(2)]]
     });
   }
 
@@ -70,7 +70,7 @@ export class NewComponent {
 
   saveThing() {
 
-    if (this.newThingForm.invalid)  return;
+    if (this.newThingForm.invalid) return;
 
     this.thing = this.newThingForm.value;
     this.thing.date = new Date();
