@@ -1,5 +1,5 @@
 export const environment = {
-    production: true,
+    production: false,
     siteName: 'ngFrontEnd',
     apiURL: 'http://localhost:3000',
     firebase: {
