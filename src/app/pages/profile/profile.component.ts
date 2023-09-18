@@ -31,7 +31,7 @@ export class ProfileComponent {
   logout() {
     this.auth.signOut();
     alert('Você saiu do aplicativo.');
-    location.href = "/home";
+    location.href = "home";
   }
 
   toProfile() {

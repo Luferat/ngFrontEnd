@@ -20,7 +20,7 @@ export class LoginComponent {
     signInWithPopup(this.auth, new GoogleAuthProvider())
       // signInWithRedirect(this.auth, new GoogleAuthProvider())
       .then((a) => {
-        location.href = '/home';
+        location.href = 'home';
       })
       .catch((error) => {
         console.error(error.code, error.message, error.customData.email);
