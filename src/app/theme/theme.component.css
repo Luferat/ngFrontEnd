@@ -16,12 +16,21 @@ nav a {
     display: flex;
     align-items: center;
     flex-direction: column;
+    color: black;
+}
+
+nav a:hover {
+    color: orangered;
+}
+
+nav i {
+    font-size: 1.5rem;
 }
 
 nav img {
     width: 1.5rem;
     height: 1.5rem;
-    border-radius: 50%;
+    /* border-radius: 50%; */
 }
 
 #wrap {
@@ -42,7 +51,7 @@ header {
 
 header h1 {
     margin: 0;
-    
+
 }
 
 header h1 a {

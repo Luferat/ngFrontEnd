@@ -1,7 +1,9 @@
 export const environment = {
     production: false,
     siteName: 'ngFrontEnd',
-    apiURL: 'http://localhost:3000',
+    // apiURL: 'http://localhost:3000',
+    // apiURL: 'https://ngfrontend-api-fake.onrender.com',
+    apiURL: 'http://luferat.net:3000',
     firebase: {
         apiKey: 'AIzaSyB5MTW9Ol6l7wbhKe-1t2pLveCJx7dgi8A',
         authDomain: 'angular-auth-bfafb.firebaseapp.com',

@@ -35,7 +35,7 @@
             "scripts": [],
             "serviceWorker": true,
             "ngswConfigPath": "ngsw-config.json",
-            "baseHref": "https://luferat.github.io/ngFrontEnd/"
+            "baseHref": "."
           },
           "configurations": {
             "production": {

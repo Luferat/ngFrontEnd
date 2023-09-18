@@ -9,7 +9,7 @@
         <a routerLink="contacts" title="Faça contato" routerLinkActive="active"><i class="fa-solid fa-comments fa-fw"></i><span>Contatos</span></a>
         <span *ngIf="user; then userProfile else userLogin"></span>
     </nav>
-
+ 
     <main>
         <router-outlet></router-outlet>
     </main>
